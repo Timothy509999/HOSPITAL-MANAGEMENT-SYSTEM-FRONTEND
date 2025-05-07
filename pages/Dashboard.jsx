@@ -13,7 +13,7 @@ const App = () => {
   const [patientToDelete, setPatientToDelete] = useState(null);
 
   // Use consistent API base URL
-  const API_BASE = 'http://localhost:5000/patients';
+  const API_BASE = 'https://hospital-management-system-cdk2.onrender.com/patients';
 
   const fetchPatients = async () => {
     setIsLoading(true);
@@ -89,7 +89,7 @@ const App = () => {
 
   const handleConfirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/patients/${patientToDelete}`);
+      await axios.delete(`https://hospital-management-system-cdk2.onrender.com/api/patients/${patientToDelete}`);
       setPatients(patients.filter(patient => patient._id !== patientToDelete));
       toast.success('Patient deleted successfully!');
     } catch (err) {

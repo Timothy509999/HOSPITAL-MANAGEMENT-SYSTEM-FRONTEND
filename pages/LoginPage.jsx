@@ -12,7 +12,7 @@ const LoginPage = () => {
     e.preventDefault();
     setError(null);
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', form);
+      const res = await axios.post('https://hospital-management-system-cdk2.onrender.com/api/auth/login', form);
       
       // Store token in localStorage
       localStorage.setItem('accessToken', res.data.accessToken);
